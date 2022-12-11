@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -21,6 +22,7 @@
         <tr>
             <th>Category name</th>
             <th>Display order</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +31,18 @@
             <tr>
                 <td width="50%"> @category.name </td>
                 <td width="30%"> @category.DisplayOrder</td>
+                <!--Pass id back to method in controller using the asp-route-PARAMETER_NAME tag helper. Last part must match the parameter's name defined in action-->
+                <td class="w-75 btn-group"><a class="btn btn-primary mx-2" asp-controller="Category" asp-action="Edit" asp-route-id=@category.Id
+                ><i class="bi bi-pencil-square"></i>
+                    Edit</a>
+                </td>
+
+                    <td class="w-75 btn-group">
+                        <a class="btn btn-danger mx-2" asp-controller="Category" asp-action="Delete" asp-route-id=@category.Id>
+                            <i class="bi bi-trash"></i>
+                            Delete
+                        </a>
+                    </td>
             </tr>            
         }
     </tbody>

@@ -1,0 +1,38 @@
+﻿@model Category 
+<!--It is not mandatory to pass an object to a view in order to use the model tag.-->
+
+<form method="post" asp-action="Delete">
+    <!--we need to keep at least one input space enabled so the id value returned to controller is not default-->
+    <input asp-for="Id" hidden/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+             <h2 class="text-primary">Update category</h2>
+        </div>
+
+
+        <hr/>
+   
+        <div class="mb-3">
+            <label asp-for="name"></label>
+            <input disabled asp-for="name" class="form-control" />
+        
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input disabled asp-for="DisplayOrder" class="form-control" />
+        
+        </div>
+
+            <button class="btn btn-danger" style="width:150px">Delete category</button>
+            <a class="btn btn-secondary text-end" asp-controller="Category" asp-action="Index" style="width:150px">Go back to list</a>
+    </div>  
+
+</form>
+
+        <!--Client side validation. It validates basic things like input fields not being empty-->
+        
+        @section Scripts{
+            <!--Shared view taken from Views/Shared folder-->
+            <partial name="_ValidationScriptsPartial"/>
+        }

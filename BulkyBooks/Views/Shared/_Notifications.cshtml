@@ -1,0 +1,19 @@
+﻿@if(TempData["task_completed"] != null){
+    <!--Add these two script tags to use toastr-->
+    <script src="lib\jquery\dist\jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        console.log('Voy toastr');
+    toastr.success('@TempData["task_completed"]');    
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script src="lib\jquery\dist\jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        console.log('Voy toastr');
+        toastr.error('@TempData["error"]');
+    </script>
+}

@@ -1,5 +1,5 @@
 # CRUD_MVC
-During this section, a smal CRUD web application was implemented using Entity Framework.
+During this section, a small CRUD web application was implemented using Entity Framework.
 The following topics were reviewed:
 - Entity Framework.
 - Tag helpers.
